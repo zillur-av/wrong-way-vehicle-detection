@@ -1,0 +1,6 @@
+train: /home/rahmaz1/New/yolo/coco/train/images/
+val: /home/rahmaz1/New/yolo/coco/valid/images/
+
+nc: 3
+
+names: ['person', 'car','bus']
