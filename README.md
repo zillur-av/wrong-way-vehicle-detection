@@ -19,6 +19,8 @@ python3 detect_wrong.py --source overpass.mp4 --weights ./my_coco.pt --data ./da
 The output will be saved in ./yolov5/runs/detect/exp. To exit, press ctrl+c in the terminal. You will see vehicles in one side of the road are being shown as wrong direction vehicles though they are not actually in wrong side. This is because our implementation is for one way roads. That means, in a one way road, if cars come from both sides, one side will be shown as wrong. You can choose which side is wrong by modifying the greater than sign in line 208 of "detect_wrong.py". Depending on the camera angle, you might have the change the Region of Interest area. You can do in line 158 and 159.
 If you use your own trained model, make sure you use the right configuration file too. We are using ./yolov5/data/my_coco.yaml. Also, make sure you change the class id in line 182. If your model has classes other than vehicles, then, only use vehicle classes.
 
+![](https://github.com/Zillurcuet/wrong-way-vehicle-detection/blob/main/output.gif)
+
 # Citation
 If you use our work, make sure you cite yolov5 and the following paper:
 ```
