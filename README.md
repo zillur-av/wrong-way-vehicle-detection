@@ -6,7 +6,7 @@ Write the following commands in your terminal. The project has been tested on ub
 git clone git@github.com:Zillurcuet/wrong-way-vehicle-detection.git
 ```
 You can use the pre-trained weights of yolov5. But I have trained the model with a custom dataset. Download the weights from [weights-google drive](https://drive.google.com/file/d/1Ttd1CuFBnTLBiUWbxz5LCoS68S8AplB6/view?usp=share_link) and put it in ./yolov5/my_coco.pt here. Then download the test video from [test video- Google drive](https://drive.google.com/file/d/1amhEP1frS0D1i4Xi2rBvsrl3D7H3ZuIM/view?usp=share_link) and put it in ./yolov5/overpass.mp4. You can use your video too.
-Next, install the necessary python package. 
+Next, install the necessary python package. I highly recommend using a conda environment. Install Miniconda, create a new environment with python 3.8 and install the package using pip inside the environment or using conda. Before using pip, check ```which pip```. If it shows your conda environment, you are good to go. Otherwise, you can simply execute the following lines in your terminal.
 ```
 cd wrong-way-vehicle-detection
 cd yolov5
