@@ -5,8 +5,8 @@ Write the following commands in your terminal. The project has been tested on ub
 ```
 git clone https://github.com/zillur-av/wrong-way-vehicle-detection.git
 ```
-You can use the pre-trained weights of yolov5. But I have trained the model with a custom dataset. Download the weights from [weights-google drive](https://drive.google.com/file/d/1Ttd1CuFBnTLBiUWbxz5LCoS68S8AplB6/view?usp=share_link) and put it in ./yolov5/my_coco.pt here. Then download the test video from [test video- Google drive](https://drive.google.com/file/d/1amhEP1frS0D1i4Xi2rBvsrl3D7H3ZuIM/view?usp=share_link) and put it in ./yolov5/overpass.mp4. You can use your video too.
-Next, install the necessary python package. I highly recommend using a conda environment. Install Miniconda, create a new environment with python 3.8 and install the package using pip inside the environment or using conda. Before using pip, check ```which pip```. If it shows your conda environment, you are good to go. Otherwise, you can simply execute the following lines in your terminal.
+You can use the pre-trained weights of yolov5. But I have trained the model with a custom dataset. Download the weights from [weights-google drive](https://drive.google.com/file/d/1Ttd1CuFBnTLBiUWbxz5LCoS68S8AplB6/view?usp=share_link) and put it in `./yolov5/my_coco.pt` here. Then download the test video from [test video- Google drive](https://drive.google.com/file/d/1amhEP1frS0D1i4Xi2rBvsrl3D7H3ZuIM/view?usp=share_link) and put it in `./yolov5/overpass.mp4`. You can use your video too.
+Next, install the necessary python package. I highly recommend using a `conda environment`. Install Miniconda, create a new environment with `python 3.8` and install the package using pip inside the environment or using conda. Before using pip, check ```which pip```. If it shows your conda environment, you are good to go. Otherwise, you can simply execute the following lines in your terminal.
 ```
 cd wrong-way-vehicle-detection
 cd yolov5
@@ -16,8 +16,9 @@ If everything above is done, run the following command for inference:
 ```
 python3 detect_wrong.py --source overpass.mp4 --weights ./my_coco.pt --data ./data/my_coco.yaml
 ```
-The output will be saved in ./yolov5/runs/detect/exp. To exit, press ctrl+c in the terminal. You will see vehicles in one side of the road are being shown as wrong direction vehicles though they are not actually in wrong side. This is because our implementation is for one way roads. That means, in a one way road, if cars come from both sides, one side will be shown as wrong. You can choose which side is wrong by modifying the greater than sign in line 208 of "detect_wrong.py". Depending on the camera angle, you might have the change the Region of Interest area. You can do in line 158 and 159.
-If you use your own trained model, make sure you use the right configuration file too. We are using ./yolov5/data/my_coco.yaml. Also, make sure you change the class id in line 182. If your model has classes other than vehicles, then, only use vehicle classes.
+The output will be saved in `./yolov5/runs/detect/exp`. To exit, press ctrl+c in the terminal. You will see vehicles in one side of the road are being shown as wrong direction vehicles though they are not actually in wrong side. This is because our implementation is for one way roads. That means, in a one way road, if cars come from both sides, one side will be shown as wrong. You can choose which side is wrong by modifying the greater than sign in line [208 of detect_wrong.py](https://github.com/zillur-av/wrong-way-vehicle-detection/blob/a115f2cff29361f8eefb55252f32dc8ff5a0f0b7/yolov5/detect_wrong.py#L208). Depending on the camera angle, you might have the change the Region of Interest area. You can do in line [158 and 159](https://github.com/zillur-av/wrong-way-vehicle-detection/blob/a115f2cff29361f8eefb55252f32dc8ff5a0f0b7/yolov5/detect_wrong.py#LL158C1-L159C40).
+
+If you use your own trained model, make sure you use the right configuration file too. We are using `./yolov5/data/my_coco.yaml`. Also, make sure you change the `class id` in [line 182](https://github.com/zillur-av/wrong-way-vehicle-detection/blob/a115f2cff29361f8eefb55252f32dc8ff5a0f0b7/yolov5/detect_wrong.py#LL182C37-L182C47). If your model has classes other than vehicles, then, only use vehicle classes.
 
 ![](https://github.com/Zillurcuet/wrong-way-vehicle-detection/blob/main/output.gif)
 
